@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content{
+    padding: 20px;
+    min-height: 500px;
+    background-color: #eee;
+}
+
+.titulo {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 40px auto 40px auto;
+}
+.titulo:after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 3px;
+    background: #000;
+    margin: 8px auto;
+}
