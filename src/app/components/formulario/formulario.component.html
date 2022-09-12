@@ -1,14 +1,41 @@
-<div class="titulo">Formulário</div>
+<div class="titulo">Cadastro</div>
+
+<h1>Olá {{ ngModelNome }}, Seja bem Vindo</h1>
 <form action="">
   <div class="contato">
     <div class="nome">
       <label for="">Qual seu nome?</label>
-      <input type="text" name="nome" id="">
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        [(ngModel)]="ngModelNome"
+        placeholder="Nome"
+        #nome
+      />
     </div>
-    <div class="sobrenome"></div>
-    <div class="email"></div>
-    <div class="telefone"></div>
-    <div class="endereco"></div>
+    <div class="sobrenome">
+      <label for="">Qual seu sobrenome?</label>
+      <input
+        type="text"
+        name="sobrenome"
+        id="sobrenome"
+        placeholder="Sobrenome"
+      />
+    </div>
+    <div class="email">
+      <label for="">Qual seu email?</label>
+      <input type="text" name="email" id="email" placeholder="e-mail" />
+    </div>
+    <div class="telefone">
+      <label for="">Qual seu telefone?</label>
+      <input type="text" name="telefone" id="telefone" placeholder="telefone" />
+    </div>
+    <div class="endereco">
+      <label for="">Qual seu endereco?</label>
+      <input type="text" name="endereçoo" id="endereco" placeholder="Endereco" />
+    </div>
     <div class="mensagem"></div>
+    <button>Enviar</button>
   </div>
 </form>
