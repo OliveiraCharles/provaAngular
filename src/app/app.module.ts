@@ -10,6 +10,7 @@ import { SegurancaCorporativaComponent } from './components/seguranca-corporativ
 import { FerramentasDeDefesaComponent } from './components/ferramentas-de-defesa/ferramentas-de-defesa.component';
 import { AdversarialMachineLearningComponent } from './components/adversarial-machine-learning/adversarial-machine-learning.component';
 import { DadosCardComponent } from './components/dados-recentes/dados-card/dados-card.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DadosCardComponent } from './components/dados-recentes/dados-card/dados
     SegurancaCorporativaComponent,
     FerramentasDeDefesaComponent,
     AdversarialMachineLearningComponent,
-    DadosCardComponent
+    DadosCardComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

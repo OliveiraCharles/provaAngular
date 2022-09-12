@@ -29,4 +29,29 @@ footer{
 img{
     height: 100%;
 }
+header img{
+    border-radius: 10px;
+}
 
+#bkg {
+    width: 100%;
+    height: 360px;
+    margin: 0px;
+    padding-top: 60px;
+    background: url(/assets/img/bg-image3.png);
+    background-size: cover;
+    text-align: center;
+  }
+  .content{
+      padding: 0;
+  }
+  
+  #bkg p {
+    color: #eee;
+    font-size: 48px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    transition: opacity 800ms, transform 800ms;
+    margin: 60px;
+  }
