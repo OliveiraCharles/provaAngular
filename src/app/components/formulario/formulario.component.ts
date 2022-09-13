@@ -22,9 +22,13 @@ export class FormularioComponent implements OnInit {
   numCasa: string = '';
   bairroUsuario: string = '';
   stringFinalEmail = '';
+  cidadeUsuario = '';
+  ufUsuario = '';
+  complementoUsuario = '';
+  mensagemUsuario = '';
   destinoEmail: string = "mailto:charles.oliveira@facens.br;leonardo.souza@facens.br";
 
-  
+
   constructor(private cepService: ConsultaCepService) { }
 
 
@@ -36,32 +40,45 @@ export class FormularioComponent implements OnInit {
   variavel = this.getVar
 
   concatEmail() {
-
-    this.stringFinalEmail = `${this.destinoEmail} &subject=Mensagem de ${this.nomeUsuario} &body=Prezados%0D%0A Nome: ${this.nomeUsuario} ${this.sobrenomeUsuario}, %0D%0A 
-    Email: ${this.emailUsuario}, %0D%0A
-    telefone: ${this.telefoneUsuario}, %0D%0A
-    Endereço: ${this.cepUsuario}, %0D%0A %0D%0A
+this.stringFinalEmail = `${this.destinoEmail} 
+&subject=
+Novo cadastro [${this.nomeUsuario}] 
     
-    Atenciosamente,%0D%0A
-    ${this.nomeUsuario} | ${this.telefoneUsuario}`
-
+&body=
+Prezados, segue dados do novo cadastro: %0D%0A %0D%0A 
+DadosPessoais:
+    Nome: ${this.nomeUsuario} , %0D%0A 
+    Email: ${this.emailUsuario}, %0D%0A
+    Telefone: ${this.telefoneUsuario}, %0D%0A %0D%0A
+Endereço: %0D%0A
+    CEP: ${this.cepUsuario}, %0D%0A 
+    logradouro: ${this.ruaUsuario}, %0D%0A
+    N°: ${this.numCasa}, %0D%0A
+    Bairro: ${this.bairroUsuario}, %0D%0A
+    Complemento: ${this.complementoUsuario}, %0D%0A
+    Cidade: ${this.cidadeUsuario}, %0D%0A
+    Mensagem: ${this.mensagemUsuario}, %0D%0A %0D%0A
+Atenciosamente,%0D%0A
+    ${this.nomeUsuario} ${this.sobrenomeUsuario}| ${this.telefoneUsuario}`
+    
     return this.stringFinalEmail;
   };
 
   chamaServicoCep(valoresEntrada: any, formulario: any) {
-    this.cepService.consultaCep(valoresEntrada.cep).subscribe((valoresRespostaAPI)=>{console.log('resposta',valoresRespostaAPI)});
-    
-    this.cepService.consultaCep(valoresEntrada.cep).subscribe((valoresRespostaAPI)=>this.populaForm(valoresRespostaAPI,formulario));
+    this.cepService.consultaCep(valoresEntrada.cep).subscribe((valoresRespostaAPI) => { console.log('resposta', valoresRespostaAPI) });
+
+    this.cepService.consultaCep(valoresEntrada.cep).subscribe((valoresRespostaAPI) => this.populaForm(valoresRespostaAPI, formulario));
   };
-  populaForm(valoresRespostaAPI:any,formulario:any){
+  populaForm(valoresRespostaAPI: any, formulario: any) {
     formulario.setValue({
-      cep:valoresRespostaAPI.cep,
+      cep: valoresRespostaAPI.cep,
       logradouro: valoresRespostaAPI.logradouro,
       bairro: valoresRespostaAPI.bairro,
       cidade: valoresRespostaAPI.localidade,
       uf: valoresRespostaAPI.uf,
       complemento: valoresRespostaAPI.complemento,
-      numCasa:''
+      numCasa: '',
+      mensagem: ''
     })
   };
 

@@ -37,7 +37,7 @@
             name="email"
             id="email"
             [(ngModel)]="emailUsuario"
-            placeholder="e-mail"
+            placeholder="E-mail"
             required
           />
         </span>
@@ -49,33 +49,13 @@
             name="telefone"
             id="telefone"
             [(ngModel)]="telefoneUsuario"
-            placeholder="telefone"
+            placeholder="Telefone"
             required
           />
         </span>
       </div>
 
-      <div class="linha">
-        <span>
-          <label for="sexo">Orientação Sexual:</label>
-          <select
-            id="sexo"
-            placeholder="Orientação Sexual:"
-            type="text"
-            name="sexo"
-            required
-          >
-            <option value="na">Prefiro não informar</option>
-            <option value="h">H</option>
-            <option value="m">M</option>
-            <option value="outro">Outro:</option>
-          </select>
-        </span>
-        <span>
-          <label for="sexo">Outro:</label>
-          <input type="text" />
-        </span>
-      </div>
+      
     </div>
     <div class="endereco">
       <form #enderecoAPI="ngForm">
@@ -117,6 +97,7 @@
               id="logradouro"
               maxlength="330"
               placeholder="Rua / Av."
+              [(ngModel)]="ruaUsuario"
               ngModel
               #endereco
             />
@@ -164,6 +145,7 @@
               id="complemento"
               maxlength="26"
               placeholder="Complemento"
+              [(ngModel)]="complementoUsuario"
               ngModel
               #complemento
             />
@@ -179,6 +161,7 @@
               id="cidade"
               value=""
               placeholder="Cidade"
+              [(ngModel)]="cidadeUsuario"
               ngModel
               #cidade
             />
@@ -187,7 +170,8 @@
           <span>
             <label for="uf"> UF: </label><br />
 
-            <select name="uf" ngModel #uf>
+            <select name="uf" ngModel #uf
+            [(ngModel)]="ufUsuario">
               <option value=""></option>
               <option value="AC">AC</option>
               <option value="AL">AL</option>
@@ -214,22 +198,25 @@
               <option value="RS">RS</option>
               <option value="SC">SC</option>
               <option value="SE">SE</option>
-              <option value="SP" selected="">SP</option>
+              <option value="SP">SP</option>
               <option value="TO">TO</option>
             </select>
           </span>
         </div>
         <div class="linha">
           <div class="mensagem">
-            <label for=""> mensagem: </label> <br />
-            <textarea name="mensagem"> </textarea>
+            <label for=""
+            > Mensagem: </label> <br />
+            <textarea name="mensagem" [(ngModel)]="mensagemUsuario"> </textarea>
           </div>
         </div>
       </form>
-        <p>Enviar dados por e-mail:</p>
-        <button class="enviar">
-          <a [href]="concatEmail()">Enviar</a>
-        </button>
+      <p>Enviar dados por e-mail:</p>
+      <button class="enviar">
+        <a [href]="concatEmail()"
+        title="Clique para enviar os dados por e-mail">Enviar</a>
+      </button>
+      
     </div>
   </div>
 </form>
