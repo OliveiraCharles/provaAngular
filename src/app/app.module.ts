@@ -20,6 +20,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BannerComponent } from './components/banner/banner.component';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -51,7 +52,8 @@ const analytics = getAnalytics(app);
     DadosCardComponent,
     FormularioComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

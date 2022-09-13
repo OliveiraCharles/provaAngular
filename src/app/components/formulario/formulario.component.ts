@@ -42,24 +42,24 @@ export class FormularioComponent implements OnInit {
   concatEmail() {
 this.stringFinalEmail = `${this.destinoEmail} 
 &subject=
-Novo cadastro [${this.nomeUsuario}] 
+Novo cadastro [${this.nomeUsuario} ${this.sobrenomeUsuario}] 
     
 &body=
-Prezados, segue dados do novo cadastro: %0D%0A %0D%0A 
-DadosPessoais:
-    Nome: ${this.nomeUsuario} , %0D%0A 
+Prezados, segue dados do novo cadastro: %0D%0A%0D%0A
+DadosPessoais:%0D%0A
+    Nome: ${this.nomeUsuario}${this.sobrenomeUsuario}, %0D%0A
     Email: ${this.emailUsuario}, %0D%0A
-    Telefone: ${this.telefoneUsuario}, %0D%0A %0D%0A
+    Telefone: ${this.telefoneUsuario}, %0D%0A%0D%0A
 Endereço: %0D%0A
-    CEP: ${this.cepUsuario}, %0D%0A 
-    logradouro: ${this.ruaUsuario}, %0D%0A
+    CEP: ${this.cepUsuario}, %0D%0A
+    Logradouro: ${this.ruaUsuario}, %0D%0A
     N°: ${this.numCasa}, %0D%0A
     Bairro: ${this.bairroUsuario}, %0D%0A
     Complemento: ${this.complementoUsuario}, %0D%0A
     Cidade: ${this.cidadeUsuario}, %0D%0A
     Mensagem: ${this.mensagemUsuario}, %0D%0A %0D%0A
 Atenciosamente,%0D%0A
-    ${this.nomeUsuario} ${this.sobrenomeUsuario}| ${this.telefoneUsuario}`
+    ${this.nomeUsuario} ${this.sobrenomeUsuario}|${this.telefoneUsuario}`
     
     return this.stringFinalEmail;
   };
