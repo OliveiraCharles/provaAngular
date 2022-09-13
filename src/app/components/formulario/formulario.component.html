@@ -1,41 +1,224 @@
 <div class="titulo">Cadastro</div>
+<form #cadastro="ngForm" (ngSubmit)="getVar(cadastro.value)" action="">
+  <div class="cadastro">
+    <div class="dadosPessoais">
+      <div class="linha">
+        <span>
+          <label for="nome">Nome:</label>
+          <input
+            type="text"
+            name="nome"
+            id="nome"
+            [(ngModel)]="nomeUsuario"
+            maxlength="42"
+            placeholder="Nome"
+            required
+          />
+        </span>
 
-<h1>Olá {{ ngModelNome }}, Seja bem Vindo</h1>
-<form action="">
-  <div class="contato">
-    <div class="nome">
-      <label for="">Qual seu nome?</label>
-      <input
-        type="text"
-        name="nome"
-        id="nome"
-        [(ngModel)]="ngModelNome"
-        placeholder="Nome"
-        #nome
-      />
+        <span>
+          <label for="sobrenome">Sobrenome:</label>
+          <input
+            type="text"
+            name="sobrenome"
+            id="sobrenome"
+            [(ngModel)]="sobrenomeUsuario"
+            placeholder="Sobrenome"
+            required
+          />
+        </span>
+      </div>
+
+      <div class="linha">
+        <span>
+          <label for="email"> E-mail: </label> <br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            [(ngModel)]="emailUsuario"
+            placeholder="e-mail"
+            required
+          />
+        </span>
+
+        <span>
+          <label for="telefone"> Telefone: </label> <br />
+          <input
+            type="tel"
+            name="telefone"
+            id="telefone"
+            [(ngModel)]="telefoneUsuario"
+            placeholder="telefone"
+            required
+          />
+        </span>
+      </div>
+      <div class="linha">
+        <span>
+          <label for="sexo">Orientação Sexual:</label>
+          <select
+            id="sexo"
+            placeholder="Orientação Sexual:"
+            type="text"
+            name="sexo"
+            required
+          >
+            <option value="na">Prefiro não informar</option>
+            <option value="h">H</option>
+            <option value="m">M</option>
+            <option value="outro">Outro:</option>
+          </select>
+        </span>
+        <span>
+          <label for="sexo">Outro:</label>
+          <input type="text" />
+        </span>
+      </div>
     </div>
-    <div class="sobrenome">
-      <label for="">Qual seu sobrenome?</label>
-      <input
-        type="text"
-        name="sobrenome"
-        id="sobrenome"
-        placeholder="Sobrenome"
-      />
-    </div>
-    <div class="email">
-      <label for="">Qual seu email?</label>
-      <input type="text" name="email" id="email" placeholder="e-mail" />
-    </div>
-    <div class="telefone">
-      <label for="">Qual seu telefone?</label>
-      <input type="text" name="telefone" id="telefone" placeholder="telefone" />
-    </div>
+
     <div class="endereco">
-      <label for="">Qual seu endereco?</label>
-      <input type="text" name="endereçoo" id="endereco" placeholder="Endereco" />
+      <div class="linha">
+        <span>
+          <label for="cep"> CEP: </label>
+          <input
+            type="text"
+            name="cep"
+            id="cep"
+            size="10"
+            maxlength="9"
+            [(ngModel)]="cepUsuario"
+            placeholder="CEP"
+            required
+          />
+        </span>
+        <span>
+          <a
+            href="https://buscacepinter.correios.com.br/app/endereco/index.php"
+            target="_blank"
+            title="Clique para acessar o serviço Busca de CEP"
+          >
+            [Não sabe o CEP?]
+          </a>
+        </span>
+      </div>
+      <div class="linha">
+        <span>
+          <label for=""> Endereço: </label>
+          <br />
+          <input
+            type="text"
+            name="endereco"
+            id="endereco"
+            value=""
+            maxlength="33"
+            placeholder="Rua / Av."
+            required
+          />
+        </span>
+        <span>
+          <label for="numero">N°:</label> <br />
+
+          <input
+            type="text"
+            name="numCasa"
+            id="numCasa"
+            [(ngModel)]="numCasa"
+            placeholder="N°:"
+            type="text"
+            name="numCasa"
+            id="numCasa"
+            value=""
+            class="menor"
+            maxlength="8"
+            required
+          />
+        </span>
+      </div>
+      <div class="linha">
+        <span>
+          <label for=""> Bairro: </label>
+          <input
+            type="text"
+            name="bairro"
+            id="bairro"
+            value=""
+            maxlength="45"
+            placeholder="Bairro"
+          />
+        </span>
+        <span>
+          <label for="complemento"> Complemento: </label>
+          <input
+            type="text"
+            name="complemento"
+            id="complemento"
+            maxlength="26"
+            placeholder="Complemento"
+          />
+        </span>
+      </div>
+      <div class="linha">
+        <span>
+          <label for="cidade"> Cidade: </label>
+          <input
+            type="text"
+            name="cidade"
+            id="cidade"
+            value=""
+            placeholder="Cidade"
+          />
+        </span>
+
+        <span>
+          <label for="uf"> UF: </label><br />
+
+          <select name="uf">
+            <option value=""></option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AM">AM</option>
+            <option value="AP">AP</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MG">MG</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="PR">PR</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="RS">RS</option>
+            <option value="SC">SC</option>
+            <option value="SE">SE</option>
+            <option value="SP" selected="">SP</option>
+            <option value="TO">TO</option>
+          </select>
+        </span>
+      </div>
     </div>
-    <div class="mensagem"></div>
-    <button>Enviar</button>
+    <div class="linha">
+      <div class="mensagem">
+        <span>
+          <label for=""> mensagem: </label>
+          <textarea name="mensagem" onkeyup="blocTexto(this)"> </textarea>
+        </span>
+      </div>
+      <span>
+        <div class="botoes">
+          <p>Enviar dados por e-mail:</p>
+          <button><a [href]="concatEmail()">Enviar email </a></button>
+        </div>
+      </span>
+    </div>
   </div>
 </form>

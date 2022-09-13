@@ -1,0 +1,64 @@
+form{
+    color: #444;
+    font-weight: 600;
+    width: 600px;
+    margin: 10px auto 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px #444;
+    display: flex;
+    justify-content: space-around;
+}
+span{
+    padding: 15px;
+    border-radius: 15px;
+    width: 48%;
+    display:block;
+
+}
+.linha{
+    margin-top: 10px;
+    width: 500px;
+    padding: 5px;
+    font-size: 110%;
+    display: flex;
+    justify-content: space-between;
+}
+.linha input{
+    width: 100%;
+    border: none;
+    border-bottom:solid 1px #666;
+}
+button{
+    width: 100%;
+}
+.endereco{
+    border-radius: 15px;
+    border: 1px solid #666;
+}
+/*
+
+form button, input, label{
+    border-radius: 5px;
+    width: 48%;
+    height: 40px;
+    margin-top: 20px;
+}
+.botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form div.contentform {
+	background-color: #fff;
+	padding: 10px 5px 1px 7px;
+	width: 456px;
+    margin:  0px auto 0px auto;
+	font-size: 1.1em;
+	display: flex;
+	height: auto;
+}*/
+
+.menor{
+    width: 48px;
+}
