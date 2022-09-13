@@ -1,0 +1,70 @@
+form {
+    color: #444;
+    font-weight: 600;
+    width: 600px;
+    margin: 10px auto 80px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px #444;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+}
+
+span{
+    display:block;
+    padding: 15px;
+    border-radius: 15px;
+    width: 48%;
+
+}
+.linha{
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 110%;
+}
+.linha input{
+    width: 100%;
+    border: none;
+    border-bottom:solid 1px #666;
+}
+
+form form{
+    padding: 0;
+    display: block;
+    margin-bottom: 20px;
+}
+.endereco form{
+    height: 80%;
+    background-color: #44a;
+    color: #eee;
+}
+a{
+    text-decoration: none;
+    color: #eee;
+}
+.endereco input{
+    border-bottom: solid 1px #000;
+}
+button{
+    font-size: 120%;
+    width: 100%;
+    height: 40px;
+}
+.enviar{
+    width: 100%;
+    background-color: #44a;
+    border-radius: 10px;
+    border: none;
+}
+.mensagem{
+    width: 100%;
+    margin: 20px;
+}
+textarea{
+    font-size: 120%;
+    max-width: 560px;
+    min-width: 560px;
+    height: 100px;
+}

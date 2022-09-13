@@ -1,5 +1,7 @@
 .painel{
+    max-width: 900px;
     width: 100%;
     display: flex;
-    padding: 0px 40px 40px 40px;
+    justify-content: space-between;
+    margin: 0 auto 40px auto;
 }

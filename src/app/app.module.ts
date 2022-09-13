@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,32 @@ import { AdversarialMachineLearningComponent } from './components/adversarial-ma
 import { DadosCardComponent } from './components/dados-recentes/dados-card/dados-card.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { BannerComponent } from './components/banner/banner.component';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCAt--EYykR6wFqllWyUm3Q0VVQbkL6aPA",
+  authDomain: "provaangular-c8575.firebaseapp.com",
+  projectId: "provaangular-c8575",
+  storageBucket: "provaangular-c8575.appspot.com",
+  messagingSenderId: "171037975622",
+  appId: "1:171037975622:web:767cb1971d8132d3779647",
+  measurementId: "G-EQ6LVXTCR6"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +50,16 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     FerramentasDeDefesaComponent,
     AdversarialMachineLearningComponent,
     DadosCardComponent,
-    FormularioComponent
+    FormularioComponent,
+    HeaderComponent,
+    FooterComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

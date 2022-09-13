@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./dados-card.component.scss']
 })
 export class DadosCardComponent implements OnInit {
-  @Input() texto!:{
-    textoa:string;
-    textob:string;
+  @Input() texto!: {
+    textoa: string;
+    textob: string;
   };
 
   constructor() { }

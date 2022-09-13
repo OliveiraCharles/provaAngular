@@ -1,14 +1,222 @@
-<div class="titulo">Formulário</div>
-<form action="">
-  <div class="contato">
-    <div class="nome">
-      <label for="">Qual seu nome?</label>
-      <input type="text" name="nome" id="">
+<div class="titulo">Cadastro</div>
+<form #cadastro="ngForm" (ngSubmit)="getVar(cadastro.value)" action="">
+  <div class="cadastro">
+    <div class="dadosPessoais">
+      <div class="linha">
+        <span>
+          <label for="nome">Nome:</label>
+          <input
+            type="text"
+            name="nome"
+            id="nome"
+            [(ngModel)]="nomeUsuario"
+            maxlength="42"
+            placeholder="Nome"
+            required
+          />
+        </span>
+
+        <span>
+          <label for="sobrenome">Sobrenome:</label>
+          <input
+            type="text"
+            name="sobrenome"
+            id="sobrenome"
+            [(ngModel)]="sobrenomeUsuario"
+            placeholder="Sobrenome"
+            required
+          />
+        </span>
+      </div>
+
+      <div class="linha">
+        <span>
+          <label for="email"> E-mail: </label> <br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            [(ngModel)]="emailUsuario"
+            placeholder="E-mail"
+            required
+          />
+        </span>
+
+        <span>
+          <label for="telefone"> Telefone: </label> <br />
+          <input
+            type="tel"
+            name="telefone"
+            id="telefone"
+            [(ngModel)]="telefoneUsuario"
+            placeholder="Telefone"
+            required
+          />
+        </span>
+      </div>
+
+      
     </div>
-    <div class="sobrenome"></div>
-    <div class="email"></div>
-    <div class="telefone"></div>
-    <div class="endereco"></div>
-    <div class="mensagem"></div>
+    <div class="endereco">
+      <form #enderecoAPI="ngForm">
+        <div class="linha">
+          <span>
+            <label for="cep"> CEP: </label>
+            <input
+              type="text"
+              name="cep"
+              id="cep"
+              size="10"
+              maxlength="9"
+              [(ngModel)]="cepUsuario"
+              placeholder="CEP"
+              (blur)="chamaServicoCep(enderecoAPI.value, enderecoAPI)"
+              required
+            />
+          </span>
+
+          <span
+            ><br />
+            <a
+              href="https://buscacepinter.correios.com.br/app/endereco/index.php"
+              target="_blank"
+              title="Clique para acessar o serviço Busca de CEP"
+            >
+              [Não sabe o CEP?]
+            </a>
+          </span>
+        </div>
+
+        <div class="linha">
+          <span>
+            <label for="logradouro"> Endereço: </label>
+            <br />
+            <input
+              type="text"
+              name="logradouro"
+              id="logradouro"
+              maxlength="330"
+              placeholder="Rua / Av."
+              [(ngModel)]="ruaUsuario"
+              ngModel
+              #endereco
+            />
+          </span>
+
+          <span>
+            <label for="numero">N°:</label> <br />
+
+            <input
+              type="text"
+              name="numCasa"
+              id="numCasa"
+              [(ngModel)]="numCasa"
+              placeholder="N°:"
+              type="text"
+              name="numCasa"
+              id="numCasa"
+              value=""
+              class="menor"
+              maxlength="8"
+              required
+            />
+          </span>
+        </div>
+
+        <div class="linha">
+          <span>
+            <label for=""> Bairro: </label>
+            <input
+              type="text"
+              name="bairro"
+              id="bairro"
+              value=""
+              maxlength="45"
+              placeholder="Bairro"
+              [(ngModel)]="bairroUsuario"
+            />
+          </span>
+
+          <span>
+            <label for="complemento"> Complemento: </label>
+            <input
+              type="text"
+              name="complemento"
+              id="complemento"
+              maxlength="26"
+              placeholder="Complemento"
+              [(ngModel)]="complementoUsuario"
+              ngModel
+              #complemento
+            />
+          </span>
+        </div>
+
+        <div class="linha">
+          <span>
+            <label for="cidade"> Cidade: </label>
+            <input
+              type="text"
+              name="cidade"
+              id="cidade"
+              value=""
+              placeholder="Cidade"
+              [(ngModel)]="cidadeUsuario"
+              ngModel
+              #cidade
+            />
+          </span>
+
+          <span>
+            <label for="uf"> UF: </label><br />
+
+            <select name="uf" ngModel #uf
+            [(ngModel)]="ufUsuario">
+              <option value=""></option>
+              <option value="AC">AC</option>
+              <option value="AL">AL</option>
+              <option value="AM">AM</option>
+              <option value="AP">AP</option>
+              <option value="BA">BA</option>
+              <option value="CE">CE</option>
+              <option value="DF">DF</option>
+              <option value="ES">ES</option>
+              <option value="GO">GO</option>
+              <option value="MA">MA</option>
+              <option value="MG">MG</option>
+              <option value="MS">MS</option>
+              <option value="MT">MT</option>
+              <option value="PA">PA</option>
+              <option value="PB">PB</option>
+              <option value="PE">PE</option>
+              <option value="PI">PI</option>
+              <option value="PR">PR</option>
+              <option value="RJ">RJ</option>
+              <option value="RN">RN</option>
+              <option value="RO">RO</option>
+              <option value="RR">RR</option>
+              <option value="RS">RS</option>
+              <option value="SC">SC</option>
+              <option value="SE">SE</option>
+              <option value="SP">SP</option>
+              <option value="TO">TO</option>
+            </select>
+          </span>
+        </div>
+        <div class="linha">
+          <div class="mensagem">
+            <label for=""
+            > Mensagem: </label> <br />
+            <textarea name="mensagem" [(ngModel)]="mensagemUsuario"> </textarea>
+          </div>
+        </div>
+      </form>
+      <p>Enviar dados por e-mail:</p>
+      <button class="enviar">
+        <a [href]="concatEmail()"
+        title="Clique para enviar os dados por e-mail">Enviar</a>
+      </button>
+      
+    </div>
   </div>
 </form>

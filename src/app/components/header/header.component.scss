@@ -1,0 +1,33 @@
+header {
+  width: 100%;
+  padding: 10PX 0 10PX 0PX;
+  max-width: 1400px;
+  position: fixed;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #222222;
+  color: #eee;
+  height: 50px;
+}
+header img {
+  border-radius: 10px;
+}
+nav {
+  display: flex;
+  width: 60%;
+  gap: 10px;
+  justify-content: space-around;
+  padding-right: 20px;
+}
+
+a {
+  padding: 10px;
+  text-decoration: none;
+  color: #eee;
+  font-weight: 700;
+}
+
+img {
+  height: 100%;
+}

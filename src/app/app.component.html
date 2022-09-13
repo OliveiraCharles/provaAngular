@@ -1,30 +1,12 @@
 <body>
   <header>
-    <div class="logo">
-      <a routerLink=""><img src=".\assets\img\Connor.png" alt="Logo" /></a>
-    </div>
-
-    <nav>
-      <a routerLink="">Home</a>
-      <a routerLink="/formulario">Formulário</a>
-      <a routerLink="/seguranca-corporativa">Matérias</a>
-      <a routerLink="/cenario-atual">Cenário Atual</a>
-      <a routerLink="/cenario-atual">Login</a>
-    </nav>
-   
+    <app-header></app-header>
+    <app-banner></app-banner>
   </header>
- <div class="content">
-      <div id="bkg">
-        <p>INTELIGÊNCIA ARTIFICIAL APLICADA A CIBERSEGURANÇA</p>
-        <button>Contato</button>
-      </div>
-    </div>
   <main>
     <router-outlet></router-outlet>
   </main>
-
   <footer>
-    Charles Neves Epifanio de Oliveira <br />
-    Leonardo dos Reis Souza
+    <app-footer></app-footer>
   </footer>
 </body>
