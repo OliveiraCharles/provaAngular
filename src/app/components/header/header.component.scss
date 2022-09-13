@@ -1,0 +1,30 @@
+header {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  background-color: #222;
+  color: #eee;
+  height: 50px;
+}
+header img {
+  border-radius: 10px;
+}
+nav {
+  display: flex;
+  width: 60%;
+  gap: 10px;
+  justify-content: space-around;
+  padding-right: 20px;
+}
+
+a {
+  padding: 10px;
+  text-decoration: none;
+  color: #eee;
+  font-weight: 700;
+}
+
+img {
+  height: 100%;
+}
