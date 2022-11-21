@@ -29,8 +29,6 @@ export class FormularioComponent implements OnInit {
   destinoEmail: string = "mailto:charles.oliveira@facens.br;leonardo.souza@facens.br";
 
 
-  constructor(private cepService: ConsultaCepService) { }
-
 
 
   getVar(valor: any) {
@@ -64,11 +62,15 @@ Atenciosamente,%0D%0A
     return this.stringFinalEmail;
   };
 
+  
+//CEP
+  constructor(private cepService: ConsultaCepService) { }
+
   chamaServicoCep(valoresEntrada: any, formulario: any) {
     this.cepService.consultaCep(valoresEntrada.cep).subscribe((valoresRespostaAPI) => { console.log('resposta', valoresRespostaAPI) });
-
     this.cepService.consultaCep(valoresEntrada.cep).subscribe((valoresRespostaAPI) => this.populaForm(valoresRespostaAPI, formulario));
   };
+
   populaForm(valoresRespostaAPI: any, formulario: any) {
     formulario.setValue({
       cep: valoresRespostaAPI.cep,
@@ -81,6 +83,8 @@ Atenciosamente,%0D%0A
       mensagem: ''
     })
   };
+//CEP
+
 
   ngOnInit(): void {
   };
